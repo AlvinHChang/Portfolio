@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
 import styles from './Desktop.css';
 
-// requires react-iframe and css modules
+// requires react-iframe and css modules test
 
 class Desktop extends React.Component {
   constructor(props) {
