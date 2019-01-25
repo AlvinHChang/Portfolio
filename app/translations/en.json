@@ -5,6 +5,7 @@
   "boilerplate.components.Header.home": "Home",
   "boilerplate.components.Header.portfolio": "Portfolio",
   "boilerplate.components.Header.react": "React Components",
+  "boilerplate.components.Header.rps": "Rock Paper Scissors Game",
   "boilerplate.containers.FeaturePage.css.header": "Features",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",

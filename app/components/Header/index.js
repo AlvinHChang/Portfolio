@@ -44,7 +44,11 @@ function PortfolioDropdown() {
           <FormattedMessage {...messages.react} />
         </Link>
       </ul>
-      <ul>hello</ul>
+      <ul>
+        <Link to="/rps">
+          <FormattedMessage {...messages.rps} />
+        </Link>
+      </ul>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
+import Iframe from 'react-iframe';
 import styles from './Desktop.css';
 
 // requires react-iframe and css modules test
@@ -9,6 +9,8 @@ class Desktop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      urlLink: '',
+      iframeLink: '',
       toggled: false,
     };
   }
@@ -28,26 +30,17 @@ class Desktop extends React.Component {
     }
   };
 
-  handleMouseEnter = () => {
-    if (this.props.isHover) {
-      this.setState({ toggled: true });
-    }
+  updateURL = event => {
+    this.setState({
+      urlLink: event.target.value,
+    });
   };
 
-  handleMouseLeave = () => {
-    if (this.props.isHover) {
-      this.setState({ toggled: false });
-    }
-  };
-
-  handleClick = () => {
-    if (!this.props.isHover) {
-      this.toggleDropdown();
-    }
+  submitURL = () => {
+    this.setState(prevState => ({ iframeLink: prevState.urlLink }));
   };
 
   render() {
-    const { customButton, dropdownItem, dropdownBackgroundColor } = this.props;
     return (
       <div
         ref={node => {
@@ -55,47 +48,27 @@ class Desktop extends React.Component {
         }}
         className={styles.dropdown}
       >
-        <div
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
+        <input value={this.state.urlLink} onChange={this.updateURL} />
+        <button type="button" onClick={this.submitURL}>
+          Go to URL
+        </button>
+        <CSSTransitionGroup
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+          transitionName={{
+            enter: styles['example-enter'],
+            enterActive: styles['example-enter-active'],
+            leave: styles['example-leave'],
+            leaveActive: styles['example-leave-active'],
+          }}
         >
-          <button
-            className={styles.dropdownButton}
-            type="button"
-            onClick={this.handleClick}
-          >
-            {customButton}
-          </button>
-          <CSSTransitionGroup
-            transitionEnterTimeout={300}
-            transitionLeaveTimeout={300}
-            transitionName={{
-              enter: styles['example-enter'],
-              enterActive: styles['example-enter-active'],
-              leave: styles['example-leave'],
-              leaveActive: styles['example-leave-active'],
-            }}
-          >
-            {this.state.toggled ? (
-              <div
-                style={{ backgroundColor: dropdownBackgroundColor }}
-                className={styles.dropdownItem}
-              >
-                {dropdownItem}
-              </div>
-            ) : null}
-          </CSSTransitionGroup>
-        </div>
+          <Iframe url={this.state.iframeLink} width="450px" height="450px" />
+        </CSSTransitionGroup>
       </div>
     );
   }
 }
 
-Desktop.propTypes = {
-  customButton: PropTypes.node,
-  dropdownItem: PropTypes.object,
-  dropdownBackgroundColor: PropTypes.string,
-  isHover: PropTypes.bool,
-};
+Desktop.propTypes = {};
 
 export default Desktop;

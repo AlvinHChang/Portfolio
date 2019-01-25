@@ -24,4 +24,8 @@ export default defineMessages({
     id: `${scope}.react`,
     defaultMessage: 'React Components',
   },
+  rps: {
+    id: `${scope}.rps`,
+    defaultMessage: 'Rock Paper Scissors Game',
+  },
 });
