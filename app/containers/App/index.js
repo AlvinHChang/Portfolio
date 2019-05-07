@@ -12,7 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import ComponentsPage from 'containers/ComponentsPage/Loadable';
-import RPSPage from 'containers/RPSPage/Loadable';
+import AboutPage from 'containers/AboutPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -36,7 +36,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/components" component={ComponentsPage} />
-          <Route path="/RPS" component={RPSPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
         <Footer />

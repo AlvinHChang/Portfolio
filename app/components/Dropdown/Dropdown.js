@@ -47,6 +47,7 @@ class Dropdown extends React.Component {
   };
 
   render() {
+    const { toggled } = this.state;
     const { customButton, dropdownItem, dropdownBackgroundColor } = this.props;
     return (
       <div
@@ -76,7 +77,7 @@ class Dropdown extends React.Component {
               leaveActive: styles['example-leave-active'],
             }}
           >
-            {this.state.toggled ? (
+            {toggled ? (
               <div
                 style={{ backgroundColor: dropdownBackgroundColor }}
                 className={styles.dropdownItem}
