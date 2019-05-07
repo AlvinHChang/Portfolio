@@ -40,7 +40,7 @@ function PortfolioDropdown() {
   return (
     <div className={styles.portfolioDropdown}>
       <ul>
-        <Link to="/features">
+        <Link to="/components">
           <FormattedMessage {...messages.react} />
         </Link>
       </ul>

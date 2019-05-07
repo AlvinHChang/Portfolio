@@ -1,5 +1,5 @@
 /*
- * FeaturePage
+ * ComponentsPage
  *
  * List all the features
  */

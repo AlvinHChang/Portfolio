@@ -6,7 +6,7 @@ import H1 from 'components/H1';
 import messages from '../messages';
 import FeaturePage from '../index';
 
-describe('<FeaturePage />', () => {
+describe('<ComponentsPage />', () => {
   it('should render its heading', () => {
     const renderedComponent = shallow(<FeaturePage />);
     expect(
