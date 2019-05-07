@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import '!file-loader?name=[name].[ext]!./images/sky.jpg';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -19,7 +20,8 @@ const GlobalStyle = createGlobalStyle`
   #app {
     //background-color: #fafafa;
     //background-color:#1565C0 #2B2D2C;
-    background-color:#263238;
+    background-image: url("./sky.jpg");
+    background-size: cover;
     min-height: 100%;
     min-width: 100%;
   }

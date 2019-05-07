@@ -17,7 +17,7 @@ export default styled(Link)`
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
-  color: #a8b4b2;
+  color: #b3e5fc;
   opacity: 0.8;
   width: 100px;
   height: 30px;

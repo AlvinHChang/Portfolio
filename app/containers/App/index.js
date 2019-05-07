@@ -39,7 +39,6 @@ export default function App() {
           <Route path="/about" component={AboutPage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
-        <Footer />
         <GlobalStyle />
       </AppWrapper>
     </div>

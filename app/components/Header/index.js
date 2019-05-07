@@ -3,12 +3,13 @@ import { FormattedMessage } from 'react-intl';
 
 import posed from 'react-pose';
 
-import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
 import messages from './messages';
 import Dropdown from '../Dropdown/Dropdown';
-import ComponentDropdown from '../ComponentSpawnDropdown/ComponentDropdown';
+import ComponentDropdown from '../ComponentDropdown/ComponentDropdown';
+import AboutDropdown from '../AboutDropdown/AboutDropdown';
 import styles from './index.css';
+import DemoCreated from '../DemoCreated/DemoCreated';
 
 const Box = posed.div({
   draggable: true,
@@ -34,29 +35,39 @@ class Header extends React.Component {
     return (
       <div>
         <Box className={styles.navBar}>
-          <NavBar>
-            <HeaderLink to="/">
-              <FormattedMessage {...messages.home} />
-            </HeaderLink>
-            <Dropdown
-              isHover
-              customButton={
-                <HeaderLink to="/features">
-                  <div>
-                    <FormattedMessage {...messages.portfolio} />
-                  </div>
-                </HeaderLink>
-              }
-              dropdownItem={
-                <ComponentDropdown
-                  spawnComponentCallback={this.renderComponent}
-                />
-              }
-              dropdownBackgroundColor="#0277BD"
-            />
-          </NavBar>
+          <HeaderLink to="/">
+            <FormattedMessage {...messages.home} />
+          </HeaderLink>
+          <Dropdown
+            isHover
+            customButton={
+              <HeaderLink to="/about">
+                <div>
+                  <FormattedMessage {...messages.about} />
+                </div>
+              </HeaderLink>
+            }
+            dropdownItem={<AboutDropdown />}
+            dropdownBackgroundColor="#0277BD"
+          />
+          <Dropdown
+            isHover
+            customButton={
+              <HeaderLink to="/about">
+                <div>
+                  <FormattedMessage {...messages.react} />
+                </div>
+              </HeaderLink>
+            }
+            dropdownItem={
+              <ComponentDropdown
+                spawnComponentCallback={this.renderComponent}
+              />
+            }
+            dropdownBackgroundColor="#0277BD"
+          />
         </Box>
-        {componentRendered.map(component => component)}
+        <DemoCreated componentRendered={componentRendered} />
       </div>
     );
   }

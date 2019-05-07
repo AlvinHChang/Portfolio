@@ -14,6 +14,7 @@
   padding: 5px;
 }
 .demo {
+  position: absolute;
   display: inline-block;
   border-radius: 5px;
   background-color: #01579B;

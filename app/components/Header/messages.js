@@ -12,17 +12,13 @@ export default defineMessages({
     id: `${scope}.home`,
     defaultMessage: 'Home',
   },
-  features: {
-    id: `${scope}.features`,
-    defaultMessage: 'Features',
-  },
-  portfolio: {
-    id: `${scope}.portfolio`,
-    defaultMessage: 'Portfolio',
+  about: {
+    id: `${scope}.about`,
+    defaultMessage: 'About',
   },
   react: {
-    id: `${scope}.react`,
-    defaultMessage: 'React Components',
+    id: `${scope}.component`,
+    defaultMessage: 'Components',
   },
   rps: {
     id: `${scope}.rps`,
