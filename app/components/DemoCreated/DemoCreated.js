@@ -9,7 +9,10 @@ class DemoCreated extends React.Component {
     return (
       <React.Fragment>
         {componentRendered.map((component, index) => (
-          <div className={styles.offset} style={{ top: 20 + index * 20, left: 50 + index * 10 }}>
+          <div
+            className={styles.offset}
+            style={{ top: 20 + index * 20, left: 50 + index * 10 }}
+          >
             {component}
           </div>
         ))}

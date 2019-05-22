@@ -8,8 +8,8 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import H1 from 'components/H1';
-import H3 from 'components/H3';
 import messages from './messages';
+import styles from './AboutPage.css';
 
 export default class AboutPage extends React.Component {
   // Since state and props are static,
@@ -29,10 +29,12 @@ export default class AboutPage extends React.Component {
           <FormattedMessage {...messages.header} />
         </H1>
 
-        <H3>
-          Alvin Chang is a Software Engineer with experience in Full-Stack
-          development, Machine Learning and Virtual Reality.
-        </H3>
+        <div className={styles.description}>
+          Welcome! I am Alvin, a Software Engineer currently in the transition of moving from Urbana, IL to Chicago, IL.
+          I enjoy developing and engineering new software and web apps. While I have experience in UI/UX design, my focus
+          is on the Software Engineering and the best way to develop new technology/components. My main industry experience focuses
+          in Full-Stack development and Software Architecture, but I also dabble in Machine Learning and Virtual Reality on the side.
+        </div>
       </div>
     );
   }

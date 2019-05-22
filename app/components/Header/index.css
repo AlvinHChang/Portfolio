@@ -4,9 +4,14 @@ a {
 
 }
 .navBar {
-  width: 30%;
+  width: 100%;
+  min-width: 0;
   text-align: center;
   background-color: #01579B;
   border-radius: 10px;
   color: #B3E5FC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
+
