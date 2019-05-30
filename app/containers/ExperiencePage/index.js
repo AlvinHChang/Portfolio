@@ -9,10 +9,9 @@ import { FormattedMessage } from 'react-intl';
 
 import H1 from 'components/H1';
 import messages from './messages';
-import styles from './AboutPage.css';
-import Pdf from './resume.pdf';
+import styles from './ExperiencePage.css';
 
-export default class AboutPage extends React.Component {
+export default class ExperiencePage extends React.Component {
   // Since state and props are static,
   // there's no need to re-render this component
   shouldComponentUpdate() {
@@ -23,19 +22,16 @@ export default class AboutPage extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>About Me Page</title>
-          <meta name="About Me" content="Short bio about Alvin" />
+          <title>Experiences Page</title>
+          <meta
+            name="Experiences Page"
+            content="Items and/or links pertaining to my experiences"
+          />
         </Helmet>
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
 
-        <div className={styles.description}>
-          Welcome! I am Alvin, a Software Engineer currently in the transition of moving from Urbana, IL to Chicago, IL.
-          I enjoy developing and engineering new software and web apps. While I have experience in UI/UX design, my focus
-          is on the Software Engineering and the best way to develop new technology/components. My main experiences focuses
-          in Full-Stack development and Software Architecture, but I also dabble in Machine Learning and Virtual Reality on the side.
-        </div>
         <div className={styles.description}>
           Here are the links to my GitHub pages. I have a school use account and
           a personal use account:
@@ -45,11 +41,6 @@ export default class AboutPage extends React.Component {
             </ul>
             <ul>
               <a href="https://github.com/AlvinHChang">Personal Use</a>
-            </ul>
-            <ul>
-              <a href={Pdf} target="_blank">
-                Resume
-              </a>
             </ul>
           </div>
         </div>

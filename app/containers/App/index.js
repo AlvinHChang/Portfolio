@@ -13,9 +13,9 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import ComponentsPage from 'containers/ComponentsPage/Loadable';
 import AboutPage from 'containers/AboutPage/Loadable';
+import ExperiencePage from 'containers/ExperiencePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
 
@@ -37,6 +37,7 @@ export default function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/components" component={ComponentsPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/experience" component={ExperiencePage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
         <GlobalStyle />
