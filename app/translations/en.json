@@ -10,7 +10,7 @@
   "boilerplate.containers.AboutPage.header": "About Me",
   "boilerplate.containers.AboutDropdown.about": "About",
   "boilerplate.containers.AboutDropdown.experience": "Experiences",
-  "boilerplate.containers.FeaturePage.css.header": "Features",
+  "boilerplate.containers.FeaturePage.css.header": "Component Demo Page",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",
   "boilerplate.containers.FeaturePage.feedback.message": "Enjoy the best DX and code your app at the speed of thought! Your\n    saved changes to the CSS and JS are reflected instantaneously\n    without refreshing the page. Preserve application state even when\n    you update something in the underlying code!",

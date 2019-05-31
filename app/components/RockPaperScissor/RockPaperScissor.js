@@ -39,8 +39,9 @@ class RockPaperScissor extends React.Component {
       currentPhase: this.initialize,
       cpuGameState: null,
       playerGameState: null,
-      gameMessage: 'start game by pressing any button',
-      errorMessage: '',
+      gameMsg: 'Press Any Key to Start',
+      errorMsg: '',
+      progressMsg: 'Ready',
       cpuLeft: 99,
       cpuRight: 99,
       playerLeft: 99,
@@ -61,6 +62,7 @@ class RockPaperScissor extends React.Component {
     this.state.currentPhase();
   };
 
+  // get random integer that is from 1 to Max inclusive
   getRandomInt = max => Math.floor(Math.random() * Math.floor(max) + 1);
 
   initialize = () => {
@@ -73,14 +75,15 @@ class RockPaperScissor extends React.Component {
       cpuRight,
       playerLeft,
       playerRight,
-      gameMessage: 'Your Left Hand',
+      gameMsg: 'Your Left Hand',
+      progressMsg: 'In Progress',
       currentPhase: this.getLeftHand,
     });
   };
 
   getLeftHand = () => {
     let playerLeft = 99;
-    let errorMessage = '';
+    let errorMsg = '';
     if (this.state.keyPressed === RockPaperScissor.RPSenum.keyS) {
       playerLeft = RockPaperScissor.RPSenum.ROCK;
     } else if (this.state.keyPressed === RockPaperScissor.RPSenum.keyD) {
@@ -89,20 +92,20 @@ class RockPaperScissor extends React.Component {
       playerLeft = RockPaperScissor.RPSenum.SCISSOR;
     }
     let currentPhase = this.getRightHand;
-    const gameMessage = 'Input Your Right Hand';
+    const gameMsg = 'Input Your Right Hand';
     if (playerLeft === 99) {
       currentPhase = this.getLeftHand;
-      errorMessage = 'Invalid Left Hand';
+      errorMsg = 'Invalid Left Hand';
       this.setState({
-        errorMessage,
+        errorMsg,
       });
       return;
     }
 
     this.setState({
       playerLeft,
-      gameMessage,
-      errorMessage,
+      gameMsg,
+      errorMsg,
       currentPhase,
     });
     this.updateGameState();
@@ -110,7 +113,7 @@ class RockPaperScissor extends React.Component {
 
   getRightHand = () => {
     let playerRight = 99;
-    let errorMessage = '';
+    let errorMsg = '';
     if (this.state.keyPressed === RockPaperScissor.RPSenum.keyJ) {
       playerRight = RockPaperScissor.RPSenum.ROCK;
     } else if (this.state.keyPressed === RockPaperScissor.RPSenum.keyK) {
@@ -123,30 +126,32 @@ class RockPaperScissor extends React.Component {
     // it might lead to longer checks
     if (playerRight === 99) {
       currentPhase = this.getRightHand;
-      errorMessage = 'Invalid Right Hand, input again';
+      errorMsg = 'Invalid Right Hand, input again';
       this.setState({
-        errorMessage,
+        errorMsg,
       });
       return;
     }
 
     const cpuLeft = this.getRandomInt(3);
     const cpuRight = this.getRandomInt(3);
-    const gameMessage = `Choose Hand to Use`;
+    const gameMsg = `Choose Hand to Use`;
 
     this.setState({
       cpuLeft,
       cpuRight,
       playerRight,
-      gameMessage,
-      errorMessage,
+      gameMsg,
+      errorMsg,
       currentPhase,
     });
     this.updateGameState();
   };
 
   retractAndCompare = () => {
+    // -1 implies it hasn't initialized
     let playerComparingHand = -1;
+    // checks if inputs are valid
     if (
       this.state.keyPressed === RockPaperScissor.RPSenum.keyS ||
       this.state.keyPressed === RockPaperScissor.RPSenum.keyD ||
@@ -162,14 +167,16 @@ class RockPaperScissor extends React.Component {
     } else {
       return;
     }
+    // randomly generates the hand the computer will choose
+    const cpuLeftOrRight = this.getRandomInt(2);
     const cpuComparingHand =
-      this.getRandomInt(2) === 1 ? this.state.cpuLeft : this.state.cpuRight;
+      cpuLeftOrRight === 1 ? this.state.cpuLeft : this.state.cpuRight;
     // We just compare the hands using arithmetic depending on the enums
-    const comparedHand = playerComparingHand - cpuComparingHand;
+    const comparedHandResult = playerComparingHand - cpuComparingHand;
     let result = 0;
-    if (comparedHand === -1 || comparedHand === 2) {
+    if (comparedHandResult === -1 || comparedHandResult === 2) {
       result = -1;
-    } else if (comparedHand === 1 || comparedHand === -2) {
+    } else if (comparedHandResult === 1 || comparedHandResult === -2) {
       result = 1;
     }
     let resultText = 'You Tied';
@@ -178,13 +185,13 @@ class RockPaperScissor extends React.Component {
     } else if (result === -1) {
       resultText = 'You Lost';
     }
-    this.setState(prevState => ({
-      playerRight: prevState.keyPressed,
-      gameMessage: `Opponent chose ${
-        this.RPSDict[cpuComparingHand]
-      } Result ${resultText}, press any key to play again`,
+    this.setState({
+      gameMsg: `Opponent chose ${
+        cpuLeftOrRight === 1 ? 'Left Hand' : 'Right Hand'
+      }`,
+      progressMsg: `${resultText}, Press Any Key`,
       currentPhase: this.initialize,
-    }));
+    });
   };
 
   handleKeyPress = event => {
@@ -234,23 +241,45 @@ class RockPaperScissor extends React.Component {
   };
 
   render() {
+    const {
+      cpuGameState,
+      playerGameState,
+      gameMsg,
+      progressMsg,
+      errorMsg,
+    } = this.state;
     return (
       <div>
-        <H1>{this.state.cpuGameState}</H1>
-        <H1>{this.state.playerGameState}</H1>
-        <H2>{this.state.gameMessage}</H2>
-        <span className={styles.errorMsg}>{this.state.errorMessage}</span>
-        <span>Instructions</span>
-        <div>Simple game of Rock Paper Scissors</div>
-        <span>Choosing Hands</span>
-        <span>
-          <li>S = Rock</li>
-          <li>D = Paper</li>
-          <li>F = Scissor</li>
-          <li>J = Rock</li>
-          <li>K = Paper</li>
-          <li>L = Scissor</li>
-        </span>
+        <H1>{cpuGameState}</H1>
+        <H1>{playerGameState}</H1>
+        <H2>{gameMsg}</H2>
+        <h2 className={styles.progressMsg}>{progressMsg}</h2>
+        <p className={styles.errorMsg}>{errorMsg}</p>
+        <div className={styles.instructions}>
+          <div>Instructions</div>
+          <div>Simple game of Rock Paper Scissors</div>
+          <div>
+            - Press Any Key to Start
+          </div>
+          <div>
+            - Select Rock, Paper, or Scissor for each of your hands
+          </div>
+          <div>
+            - Then select the one you will use against CPU, press any button to play again
+          </div>
+          <div>
+            - Results will show, then press any button to play again
+          </div>
+          <div>Choosing Hands</div>
+          <div>
+            <li>S = Rock</li>
+            <li>D = Paper</li>
+            <li>F = Scissor</li>
+            <li>J = Rock</li>
+            <li>K = Paper</li>
+            <li>L = Scissor</li>
+          </div>
+        </div>
       </div>
     );
   }

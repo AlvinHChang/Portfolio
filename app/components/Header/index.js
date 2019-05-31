@@ -53,7 +53,7 @@ class Header extends React.Component {
           <Dropdown
             isHover
             customButton={
-              <HeaderLink to="/about">
+              <HeaderLink to="/components">
                 <div>
                   <FormattedMessage {...messages.react} />
                 </div>

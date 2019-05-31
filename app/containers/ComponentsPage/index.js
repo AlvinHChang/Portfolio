@@ -8,10 +8,6 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import H1 from 'components/H1';
-import Demo from 'components/Demo/Demo';
-import Dropdown from 'components/Dropdown/Dropdown';
-import RockPaperScissor from 'components/RockPaperScissor/RockPaperScissor';
-import YouTube from 'react-youtube';
 import messages from './messages';
 
 export default class ComponentsPage extends React.Component {
@@ -34,23 +30,8 @@ export default class ComponentsPage extends React.Component {
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
-        <Demo
-          componentName="Clearity Demo"
-          componentItem={<YouTube videoId="k-dqfchI0us" />}
-        />
-        <Demo
-          componentName="RockPaperScissor"
-          componentItem={<RockPaperScissor />}
-        />
-        <Demo
-          componentName="Dropdown"
-          componentItem={
-            <Dropdown
-              customButton={<button type="button">Example (Click Here)</button>}
-              dropdownItem={<div>Click Again or Click Away</div>}
-            />
-          }
-        />
+        Here is an empty page! Hover over components, and click any item to
+        create an instance of that demo!
       </div>
     );
   }

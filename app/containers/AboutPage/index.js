@@ -37,14 +37,13 @@ export default class AboutPage extends React.Component {
           in Full-Stack development and Software Architecture, but I also dabble in Machine Learning and Virtual Reality on the side.
         </div>
         <div className={styles.description}>
-          Here are the links to my GitHub pages. I have a school use account and
-          a personal use account:
+          Links to more information about me
           <div className={styles.githubLink}>
             <ul>
-              <a href="https://github.com/ahchang6">School Use</a>
+              <a href="https://github.com/ahchang6">School Github</a>
             </ul>
             <ul>
-              <a href="https://github.com/AlvinHChang">Personal Use</a>
+              <a href="https://github.com/AlvinHChang">Personal Github</a>
             </ul>
             <ul>
               <a href={Pdf} target="_blank">

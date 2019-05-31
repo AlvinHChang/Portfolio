@@ -10,7 +10,7 @@ export const scope = 'boilerplate.containers.ComponentsPage';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'Features',
+    defaultMessage: 'React Component Demo Page',
   },
   scaffoldingHeader: {
     id: `${scope}.scaffolding.header`,
