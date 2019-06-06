@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './DemoCreated.css';
 
-
+// An anchor point for all created Demo objects to anchor onto, it automatically creates an offset for multiple spawning
 class DemoCreated extends React.Component {
   render() {
     const { componentRendered } = this.props;
@@ -21,6 +21,7 @@ class DemoCreated extends React.Component {
   }
 }
 DemoCreated.propTypes = {
+  // Array that contains the array of components rendered in this anchor
   componentRendered: PropTypes.array,
 };
 

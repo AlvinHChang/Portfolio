@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransitionGroup } from 'react-transition-group';
 import posed from 'react-pose';
 import styles from './Demo.css';
 
@@ -9,6 +8,7 @@ const Box = posed.div({
   draggable: true,
 });
 
+// class that contains the component passed in to be demoed. It provides a show/hide button with a close button
 class Demo extends React.Component {
   constructor(props) {
     super(props);
@@ -22,8 +22,7 @@ class Demo extends React.Component {
     this.setState(prevState => ({ toggled: !prevState.toggled }));
   };
 
-  // this function will remove self but will call a callback (to remove from
-  // parent class) if provided
+  // this function will remove self but will call a callback (to remove from parent class) if provided
   removeSelf = () => {
     const { removeCallback } = this.props;
     if (removeCallback) {
@@ -73,9 +72,13 @@ class Demo extends React.Component {
 }
 
 Demo.propTypes = {
+  // Name of the component demoed
   componentName: PropTypes.string,
+  // The object of the component demoed
   componentItem: PropTypes.object,
+  // Optional tag that user can pass in, will display so that the Demo will identify type of component
   objectType: PropTypes.string,
+  // Optional callback that can be called when this object removes itself, it can be used to remove from parent
   removeCallback: PropTypes.func,
 };
 

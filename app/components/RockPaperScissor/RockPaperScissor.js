@@ -24,6 +24,7 @@ const Enum = {
   keyL: 108,
 };
 
+// Rock Paper Scissor variant that is based off of the Chinese/Korean RPS
 class RockPaperScissor extends React.Component {
   RPSDict = {
     99: nothing,
@@ -65,6 +66,7 @@ class RockPaperScissor extends React.Component {
   // get random integer that is from 1 to Max inclusive
   getRandomInt = max => Math.floor(Math.random() * Math.floor(max) + 1);
 
+  // starts the game
   initialize = () => {
     const cpuLeft = 99;
     const cpuRight = 99;
@@ -81,6 +83,7 @@ class RockPaperScissor extends React.Component {
     });
   };
 
+  // handles obtaining the left hand of the player
   getLeftHand = () => {
     let playerLeft = 99;
     let errorMsg = '';
@@ -111,6 +114,7 @@ class RockPaperScissor extends React.Component {
     this.updateGameState();
   };
 
+  // handles obtaining the right hand of the player
   getRightHand = () => {
     let playerRight = 99;
     let errorMsg = '';
@@ -148,6 +152,7 @@ class RockPaperScissor extends React.Component {
     this.updateGameState();
   };
 
+  // handles the portion when player takes away a handle and compares the result based on retracted hand
   retractAndCompare = () => {
     // -1 implies it hasn't initialized
     let playerComparingHand = -1;
@@ -194,6 +199,7 @@ class RockPaperScissor extends React.Component {
     });
   };
 
+  // handles keyPresses when this item is mounted
   handleKeyPress = event => {
     this.setState({
       keyPressed: event.charCode,
@@ -201,6 +207,7 @@ class RockPaperScissor extends React.Component {
     this.mainLoop();
   };
 
+  // function to handle updating the game status, this is called after nearly every turn
   updateGameState = () => {
     const updateGameState = prevState => {
       const playerGameState = (
@@ -258,18 +265,13 @@ class RockPaperScissor extends React.Component {
         <div className={styles.instructions}>
           <div>Instructions</div>
           <div>Simple game of Rock Paper Scissors</div>
+          <div>- Press Any Key to Start</div>
+          <div>- Select Rock, Paper, or Scissor for each of your hands</div>
           <div>
-            - Press Any Key to Start
+            - Then select the one you will use against CPU, press any button to
+            play again
           </div>
-          <div>
-            - Select Rock, Paper, or Scissor for each of your hands
-          </div>
-          <div>
-            - Then select the one you will use against CPU, press any button to play again
-          </div>
-          <div>
-            - Results will show, then press any button to play again
-          </div>
+          <div>- Results will show, then press any button to play again</div>
           <div>Choosing Hands</div>
           <div>
             <li>S = Rock</li>

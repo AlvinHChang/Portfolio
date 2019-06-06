@@ -5,6 +5,8 @@ import styles from './Desktop.css';
 
 // requires react-iframe and css modules test
 
+// WIP, idea to be a component that simulates multiple desktops,
+// currently halted because Cross-Origin doesn't allow loading through iFrames
 class Desktop extends React.Component {
   constructor(props) {
     super(props);
