@@ -14,6 +14,11 @@ class AboutDropdown extends React.Component {
             <FormattedMessage {...messages.about} />
           </Link>
         </ul>
+        <ul>
+          <Link to="/project">
+            <FormattedMessage {...messages.project} />
+          </Link>
+        </ul>
       </div>
     );
   }

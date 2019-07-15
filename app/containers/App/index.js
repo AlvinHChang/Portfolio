@@ -14,6 +14,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import ComponentsPage from 'containers/ComponentsPage/Loadable';
 import AboutPage from 'containers/AboutPage/Loadable';
 import ExperiencePage from 'containers/ExperiencePage/Loadable';
+import ProjectPage from 'containers/ProjectPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 
@@ -37,6 +38,7 @@ export default function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/components" component={ComponentsPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/project" component={ProjectPage} />
           <Route path="/experience" component={ExperiencePage} />
           <Route path="" component={NotFoundPage} />
         </Switch>

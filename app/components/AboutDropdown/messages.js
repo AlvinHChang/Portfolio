@@ -16,4 +16,8 @@ export default defineMessages({
     id: `${scope}.experience`,
     defaultMessage: 'Experiences',
   },
+  project: {
+    id: `${scope}.project`,
+    defaultMessage: 'Current Project(s)',
+  },
 });
