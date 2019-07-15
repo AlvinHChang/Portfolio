@@ -18,6 +18,6 @@ export default defineMessages({
   },
   project: {
     id: `${scope}.project`,
-    defaultMessage: 'Current Project(s)',
+    defaultMessage: 'Projects',
   },
 });

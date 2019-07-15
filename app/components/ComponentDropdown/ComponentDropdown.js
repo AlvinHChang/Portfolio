@@ -14,13 +14,6 @@ class ComponentDropdown extends React.Component {
         <ul>
           <DemoCreateButton
             {...this.props}
-            componentName="Clearity Demo"
-            componentItem={<YouTube videoId="k-dqfchI0us" />}
-          />
-        </ul>
-        <ul>
-          <DemoCreateButton
-            {...this.props}
             componentName="RockPaperScissor"
             componentItem={<RockPaperScissor />}
           />
