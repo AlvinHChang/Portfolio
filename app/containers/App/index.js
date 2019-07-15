@@ -31,8 +31,8 @@ const AppWrapper = styled.div`
 export default function App() {
   return (
     <div>
+      <Header />
       <AppWrapper>
-        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/components" component={ComponentsPage} />

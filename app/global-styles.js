@@ -19,9 +19,9 @@ const GlobalStyle = createGlobalStyle`
 
   #app {
     //background-color: #fafafa;
-    //background-color:#1565C0 #2B2D2C;
-    background-image: url("./sky.jpg");
-    background-size: cover;
+    background-color:#1565C0;
+    //background-image: url("./sky.jpg");
+    //background-size: cover;
     min-height: 100%;
     min-width: 100%;
   }

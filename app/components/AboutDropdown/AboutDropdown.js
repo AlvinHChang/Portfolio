@@ -14,11 +14,6 @@ class AboutDropdown extends React.Component {
             <FormattedMessage {...messages.about} />
           </Link>
         </ul>
-        <ul>
-          <Link to="/experience">
-            <FormattedMessage {...messages.experience} />
-          </Link>
-        </ul>
       </div>
     );
   }

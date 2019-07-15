@@ -51,7 +51,7 @@ export class HomePage extends React.PureComponent {
     return (
       <article>
         <Helmet>
-          <title>ElvenChain</title>
+          <title>Alvin Chang</title>
           <meta
             name="Alvin Chang's Portfolio"
             content="Portfolio that contains various React Components"
@@ -81,19 +81,6 @@ export class HomePage extends React.PureComponent {
             </p>
           </CenteredSection>
         </div>
-        <Section>
-          <span>Resources Used:</span>
-          <p>
-            <a href="https://www.freepik.com/free-photos-vectors/background">
-              Background photo created by tirachard - www.freepik.com
-            </a>
-          </p>
-          <p>
-            <a href="https://github.com/react-boilerplate/react-boilerplate">
-              React Boilerplate
-            </a>
-          </p>
-        </Section>
       </article>
     );
   }
