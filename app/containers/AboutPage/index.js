@@ -31,10 +31,10 @@ export default class AboutPage extends React.Component {
         </H1>
 
         <div className={styles.description}>
-          Welcome! I am Alvin, a Software Engineer currently in the transition of moving from Urbana, IL to Chicago, IL.
+          Welcome! I am Alvin, a Software Engineer currently in Chicago, IL.
           I enjoy developing and engineering new software and web apps. While I have experience in UI/UX design, my focus
           is on the Software Engineering and the best way to develop new technology/components. My main experiences focuses
-          in Full-Stack development and Software Architecture, but I also dabble in Machine Learning and Virtual Reality on the side.
+          in Full-Stack development and Software Architecture.
         </div>
         <div className={styles.description}>
           Links to more information about me
