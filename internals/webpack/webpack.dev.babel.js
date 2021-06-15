@@ -23,12 +23,6 @@ module.exports = require('./webpack.base.babel')({
     chunkFilename: '[name].chunk.js',
   },
 
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
-
   // Add development plugins
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading

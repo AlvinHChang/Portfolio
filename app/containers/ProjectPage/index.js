@@ -35,7 +35,9 @@ export default class ProjectPage extends React.Component {
           <ul>
             <div className={styles.githubLink}>
               <ul>
-                <a href="https://github.com/AlvinHChang/elven-platform">Elven-Platform</a>
+                <a href="https://github.com/AlvinHChang/elven-platform">
+                  Elven-Platform
+                </a>
               </ul>
             </div>
             <p>
@@ -51,7 +53,9 @@ export default class ProjectPage extends React.Component {
               </ul>
             </div>
             <p>
-              { "This is the link to the Github of my current website. I made a quick version of it to demonstrate to employers, but I plan on expanding and improving it as time goes on. The website is in ReactJS. "}
+              {
+                'This is the link to the Github of my current website. I made a quick version of it to demonstrate to employers, but I plan on expanding and improving it as time goes on. The website is in ReactJS. '
+              }
             </p>
           </ul>
         </div>
@@ -66,8 +70,8 @@ export default class ProjectPage extends React.Component {
             <p>
               ISRCafe was named after one of the dormitories that I still visit
               after I graduated. The idea was to integrate Google Form/Sheet API
-              with a frontend. The end result allowed us to serve refreshments to
-              the community in the dormitory in real time. Them sending their
+              with a frontend. The end result allowed us to serve refreshments
+              to the community in the dormitory in real time. Them sending their
               order, us fulfilling them and allowing them to see when to pick up
               their drink
             </p>
@@ -79,10 +83,10 @@ export default class ProjectPage extends React.Component {
               </ul>
             </div>
             <p>
-              Chess is one of my passions, so it is only natural that I created a
-              a simple chess application. Inside the repo includes the testPlan
-              testPlan the various files reflecting the designs I have for the
-              game
+              Chess is one of my passions, so it is only natural that I created
+              a a simple chess application. Inside the repo includes the
+              testPlan testPlan the various files reflecting the designs I have
+              for the game
             </p>
           </ul>
           <ul>
@@ -93,10 +97,10 @@ export default class ProjectPage extends React.Component {
             </div>
             <YouTube videoId="k-dqfchI0us" />
             <p>
-            Clearity was a project I created with a group of people to help
-            streamline questions from students to professors and vice versa. In
-            this project, I handled all of backend and helped design the front
-            end. I also edited, directed and narrated the demo video.
+              Clearity was a project I created with a group of people to help
+              streamline questions from students to professors and vice versa.
+              In this project, I handled all of backend and helped design the
+              front end. I also edited, directed and narrated the demo video.
             </p>
           </ul>
         </div>
@@ -111,10 +115,11 @@ export default class ProjectPage extends React.Component {
               </ul>
             </div>
             <p>
-            I believe why most of our handwriting is messy is because the size
-            and position of each letter are not aligned. PrettyHandwriting hopes
-            to rescale each letter in a handwritten note to the same size. I
-            hope that it would make the handwriting more pleasing to read.
+              I believe why most of our handwriting is messy is because the size
+              and position of each letter are not aligned. PrettyHandwriting
+              hopes to rescale each letter in a handwritten note to the same
+              size. I hope that it would make the handwriting more pleasing to
+              read.
             </p>
           </ul>
         </div>
